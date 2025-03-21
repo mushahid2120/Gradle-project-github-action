@@ -70,7 +70,7 @@ jobs:
         - name: Docker building image
           run: |
             curl -u admin:redhat -O http://13.201.12.74:8081/com/example/my-app/2.1.1/my-app-2.1.1.jar
-            docker build -t mushahid144/gradle-app:latest
+            docker build -t mushahid144/gradle-app:latest .
 
         
         - name: Build and push

@@ -1,9 +1,19 @@
-name: hellow
+name: gradle-project
 on: workflow_dispatch
 jobs:
   my-job:
     runs-on: ubuntu-latest
     steps:
-      - name: my-step
-        run: echo "Welcome  to Github Action"
+      - name: Checking Out
+        uses: actions/checkout@v4
+      - name: Setup JDK
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: 'gradle'
+
+      - name: Build with Gradle
+        run: gradle assemble
+      
 

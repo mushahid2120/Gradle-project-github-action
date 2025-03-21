@@ -1,0 +1,103 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.example",
+    "module": "my-app",
+    "version": "2.1.1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.13"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "my-app-2.1.1-plain.jar",
+          "url": "my-app-2.1.1-plain.jar",
+          "size": 891019,
+          "sha512": "70bcf887c2778a1fff292311c24e90a3cb58f096573dfe1f6a4cd64e20db9ee574f92a29a98fb9cbdc3ac8df75c6a7690d0fdcb084c806211fb0add6ed9d6542",
+          "sha256": "29604c31dc5135d1bcd6eafd90cc571f95db6600e3467e1dd2e346bae74b65ad",
+          "sha1": "fc547e5e0a8bdd0866aca816d09c1a67f0ab7f22",
+          "md5": "624c42697e82c47898d3d6be81013fce"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.springframework.boot",
+          "module": "spring-boot-starter-thymeleaf",
+          "version": {
+            "requires": "2.7.15"
+          },
+          "excludes": [
+            {
+              "group": "ognl",
+              "module": "ognl"
+            },
+            {
+              "group": "org.javassist",
+              "module": "javassist"
+            }
+          ]
+        },
+        {
+          "group": "org.springframework.boot",
+          "module": "spring-boot-starter-web",
+          "version": {
+            "requires": "2.7.15"
+          },
+          "excludes": [
+            {
+              "group": "ognl",
+              "module": "ognl"
+            },
+            {
+              "group": "org.javassist",
+              "module": "javassist"
+            }
+          ]
+        },
+        {
+          "group": "org.springframework.boot",
+          "module": "spring-boot-starter-tomcat",
+          "version": {
+            "requires": "2.7.15"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "my-app-2.1.1-plain.jar",
+          "url": "my-app-2.1.1-plain.jar",
+          "size": 891019,
+          "sha512": "70bcf887c2778a1fff292311c24e90a3cb58f096573dfe1f6a4cd64e20db9ee574f92a29a98fb9cbdc3ac8df75c6a7690d0fdcb084c806211fb0add6ed9d6542",
+          "sha256": "29604c31dc5135d1bcd6eafd90cc571f95db6600e3467e1dd2e346bae74b65ad",
+          "sha1": "fc547e5e0a8bdd0866aca816d09c1a67f0ab7f22",
+          "md5": "624c42697e82c47898d3d6be81013fce"
+        }
+      ]
+    }
+  ]
+}

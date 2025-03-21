@@ -15,5 +15,10 @@ jobs:
 
       - name: Build with Gradle
         run: gradle assemble
-      
+
+      - name: Trivy Scan fs
+        uses: aquasecurity/trivy-action@0.28.0
+        with:
+          scan-type: 'fs'
+          scan-ref: '.'
 

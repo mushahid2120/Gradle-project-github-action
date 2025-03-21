@@ -34,11 +34,11 @@ jobs:
         - name: Checking Out
           uses: actions/checkout@v4
         - name: testing secrets
-          run: echo ${{ secrets.TESTING }}
-        - name: SonarQube Scan
-          uses: SonarSource/sonarqube-scan-action@master
-          env:
-            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-            SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+          run: ${{ secrets.TESTING }}
+        # - name: SonarQube Scan
+        #   uses: SonarSource/sonarqube-scan-action@master
+        #   env:
+        #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        #     SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
       
 

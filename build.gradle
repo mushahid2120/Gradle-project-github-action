@@ -33,7 +33,7 @@ test {
 
 sonarqube {
     properties {
-       	property 'sonar.host.url', 'http://3.110.83.75:9000'
+       	property 'sonar.host.url', 'http://13.201.12.74:9000'
         property 'sonar.login', 'squ_aca8e3dcfefcbc32b9de3f7a7745446105ee3974'
     }
 }
@@ -42,7 +42,7 @@ publishing {
     repositories {
         maven {
             name = "nexus-releases"
-            url = uri("http://3.110.83.75:8081/repository/maven-releases/") // Change for snapshots
+            url = uri("http://13.201.12.74:8081/repository/maven-releases/") // Change for snapshots
             credentials {
                 username = "admin"
                 password = "redhat"

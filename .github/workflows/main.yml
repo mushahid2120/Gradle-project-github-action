@@ -69,8 +69,15 @@ jobs:
           uses: docker/setup-buildx-action@v3
         - name: Docker building image
           run: |
-            curl -u admin:redhat -O http://13.201.12.74:8081/com/example/my-app/2.1.1/my-app-2.1.1.jar
+            curl -u ${{vars.NEXUS_USERNAME}}:${{secrets.NEXUS_PASSWORD}} -O http://13.201.12.74:8081/com/example/my-app/2.1.1/my-app-2.1.1.jar
             docker build -t mushahid144/gradle-app:latest .
+
+        - name: Trivy image scan
+          uses: aquasecurity/trivy-action@0.28.0
+          with:
+            scan-type: 'image'
+            image-ref: mushahid144/gradle-app:latest
+
 
         
         - name: Build and push

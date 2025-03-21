@@ -1,36 +1,40 @@
 name: gradle-project
 on: workflow_dispatch
 jobs:
-  gradle-build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checking Out
-        uses: actions/checkout@v4
-      - name: Setup JDK
-        uses: actions/setup-java@v4
-        with:
-          java-version: '17'
-          distribution: 'temurin'
-          cache: 'gradle'
+  # gradle-build:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checking Out
+  #       uses: actions/checkout@v4
+  #     - name: Setup JDK
+  #       uses: actions/setup-java@v4
+  #       with:
+  #         java-version: '17'
+  #         distribution: 'temurin'
+  #         cache: 'gradle'
 
-      - name: Build with Gradle
-        run: gradle assemble
-  trivy-scan-fs:
-    runs-on: ubuntu-latest
-    needs:
-      - gradle-build
-    steps:
-      - name: Trivy Scan fs
-        uses: aquasecurity/trivy-action@0.28.0
-        with:
-          scan-type: 'fs'
-          scan-ref: '.'
+  #     - name: Build with Gradle
+  #       run: gradle assemble
+  # trivy-scan-fs:
+  #   runs-on: ubuntu-latest
+  #   needs:
+  #     - gradle-build
+  #   steps:
+  #     - name: Trivy Scan fs
+  #       uses: aquasecurity/trivy-action@0.28.0
+  #       with:
+  #         scan-type: 'fs'
+  #         scan-ref: '.'
 
   sonar-scan:
      runs-on: ubuntu-latest
-     needs:
-       - trivy-scan-fs
+     # needs:
+     #   - trivy-scan-fs
      steps:
+        - name: Checking Out
+          uses: actions/checkout@v4
+        - name: testing secrets
+          run: echo ${{ secrets.TESTING }}
         - name: SonarQube Scan
           uses: SonarSource/sonarqube-scan-action@master
           env:

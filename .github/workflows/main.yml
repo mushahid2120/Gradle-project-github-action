@@ -40,6 +40,8 @@ jobs:
   push-to-nexus:
     runs-on: ubuntu-latest
     steps:
+      - name: Checking Out
+        uses: actions/checkout@v4
       - name: Setup JDK
         uses: actions/setup-java@v4
         with:

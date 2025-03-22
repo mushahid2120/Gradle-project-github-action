@@ -31,6 +31,8 @@ jobs:
      needs:
        - trivy-scan-fs
      steps:
+        - name: Checking Out
+          uses: actions/checkout@v4
         - name: SonarQube Scan
           uses: SonarSource/sonarqube-scan-action@master
           env:

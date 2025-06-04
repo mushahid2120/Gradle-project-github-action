@@ -2,6 +2,10 @@
 
 This repository contains a Gradle-based Java application with a complete CI/CD pipeline implemented using GitHub Actions. The pipeline automates testing, security scanning, static code analysis, artifact publishing to Nexus, and Docker image creation and deployment.
 
+
+![logo](https://github.com/user-attachments/assets/44dac312-7f5f-4f53-8e9b-0ff3d800a1c8)
+
+
 ---
 
     gradle-java-devops/
